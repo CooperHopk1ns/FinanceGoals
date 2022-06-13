@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State private var showingAddGoal = false
     var body: some View {
             VStack {
             NavigationView {
@@ -25,11 +25,14 @@ struct ContentView: View {
                 .navigationTitle("Goals")
             }
             Button(action: {
-                
+                showingAddGoal.toggle()
             }) {
                 HStack {
                 Text("Add Goal")
                 Image(systemName: "plus.circle")
+                }
+                .sheet(isPresented: $showingAddGoal) {
+                    AddingGoalView()
                 }
             }
         }
