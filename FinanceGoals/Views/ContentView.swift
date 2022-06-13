@@ -8,23 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        NavigationView {
-            ScrollView {
+            VStack {
+            NavigationView {
+                    List() {
+                        Group {
+                            NavigationLink("Goal 1") {
+                                GoalView.init(selected: 0)
+                            }
+                            NavigationLink("Goal 2") {
+                                GoalView.init(selected: 1)
+                            }
+                        }
+                    }
+                .navigationTitle("Goals")
+            }
+            Button(action: {
+                
+            }) {
                 HStack {
-                    Text("Goal 1")
-                    Text("Goal 2")
-                }
-                HStack {
-                    Text("Goal 3")
-                    Text("Goal 4")
-                }
-                HStack {
-                    Text("Goal 5")
-                    Text("Goal 6")
+                Text("Add Goal")
+                Image(systemName: "plus.circle")
                 }
             }
-            .navigationTitle("Goals")
         }
     }
 }
