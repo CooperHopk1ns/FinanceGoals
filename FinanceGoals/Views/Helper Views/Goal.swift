@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Goal: Hashable {
+struct Goal: Hashable, Codable {
     var number: Int
     var image: String
     var description: String

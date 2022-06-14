@@ -14,10 +14,20 @@ struct ContentView: View {
             VStack {
                 NavigationView {
                         List((goal), id: \.self) { goal in
+                            NavigationLink {
                             GoalView(selected: goal.number)
+                            } label: {
+                                Label(goal.description, systemImage: goal.image)
+                                Text("$\(goal.amountSaved)/$\(goal.amountTotal)")
+                            }
                         }
                         .refreshable {
+                            if let goalData = defaults.data(forKey: "goalsKey") {
+                                let decodedGoalData = try? JSONDecoder().decode([Goal].self, from: goalData)
+                                goals = decodedGoalData ?? [testGoal]
+                            }
                             goal = goals
+                            print(goals)
                     }
                     .navigationTitle("Goals")
                 }
