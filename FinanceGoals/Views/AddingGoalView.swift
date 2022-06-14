@@ -18,7 +18,7 @@ struct AddingGoalView: View {
     @State var amountTotal = 0
     var body: some View {
         NavigationView {
-            VStack {
+                VStack {
                 TextField("description", text: $description)
                     .padding()
                     .textFieldStyle(.roundedBorder)
@@ -30,15 +30,21 @@ struct AddingGoalView: View {
                     .padding()
                     .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
+                Text("You Have To Refresh The View")
+                        .padding()
                 Button(action: {
                     amountSaved = Int(amountSavedText) ?? 0
                     amountTotal = Int(amountTotalText) ?? 0
-
+                    number = goals.count
+                    goals.append(Goal.init(number: number, image: image, description: description, amountSaved: amountSaved, amountTotal: amountTotal))
                     dismiss()
+                    
+                    print("\(goals)")
                 }) {
                     Text("Enter")
                 }
             }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200, alignment: .top)
             .navigationTitle("Add A Goal")
         }
     }

@@ -9,21 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingAddGoal = false
+    @State var goal = goals
     var body: some View {
             VStack {
-            NavigationView {
-                    List() {
-                        Group {
-                            NavigationLink("Goal 1") {
-                                GoalView.init(selected: 0)
-                            }
-                            NavigationLink("Goal 2") {
-                                GoalView.init(selected: 1)
-                            }
+                NavigationView {
+                        List((goal), id: \.self) { goal in
+                            GoalView(selected: goal.number)
                         }
+                        .refreshable {
+                            goal = goals
                     }
-                .navigationTitle("Goals")
-            }
+                    .navigationTitle("Goals")
+                }
             Button(action: {
                 showingAddGoal.toggle()
             }) {
