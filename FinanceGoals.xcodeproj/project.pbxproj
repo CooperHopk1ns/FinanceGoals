@@ -14,7 +14,18 @@
 		663DE94D2856E34900DED1E8 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663DE94C2856E34900DED1E8 /* GoalView.swift */; };
 		663DE94F2856E46E00DED1E8 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663DE94E2856E46E00DED1E8 /* Goal.swift */; };
 		663DE9512856EE4D00DED1E8 /* AddingGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663DE9502856EE4D00DED1E8 /* AddingGoalView.swift */; };
+		664F41D028596DD900341A84 /* FinanceGoalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F41CF28596DD900341A84 /* FinanceGoalsUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		664F41D328596DD900341A84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 663DE9312856E15B00DED1E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 663DE9382856E15B00DED1E8;
+			remoteInfo = FinanceGoals;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		663DE9392856E15B00DED1E8 /* FinanceGoals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceGoals.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,10 +36,19 @@
 		663DE94C2856E34900DED1E8 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		663DE94E2856E46E00DED1E8 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		663DE9502856EE4D00DED1E8 /* AddingGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingGoalView.swift; sourceTree = "<group>"; };
+		664F41CD28596DD900341A84 /* FinanceGoalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceGoalsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		664F41CF28596DD900341A84 /* FinanceGoalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceGoalsUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		663DE9362856E15B00DED1E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		664F41CA28596DD900341A84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				663DE93B2856E15B00DED1E8 /* FinanceGoals */,
+				664F41CE28596DD900341A84 /* FinanceGoalsUITests */,
 				663DE93A2856E15B00DED1E8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				663DE9392856E15B00DED1E8 /* FinanceGoals.app */,
+				664F41CD28596DD900341A84 /* FinanceGoalsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +114,14 @@
 			path = "Helper Views";
 			sourceTree = "<group>";
 		};
+		664F41CE28596DD900341A84 /* FinanceGoalsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				664F41CF28596DD900341A84 /* FinanceGoalsUITests.swift */,
+			);
+			path = FinanceGoalsUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,6 +142,24 @@
 			productReference = 663DE9392856E15B00DED1E8 /* FinanceGoals.app */;
 			productType = "com.apple.product-type.application";
 		};
+		664F41CC28596DD900341A84 /* FinanceGoalsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 664F41D728596DD900341A84 /* Build configuration list for PBXNativeTarget "FinanceGoalsUITests" */;
+			buildPhases = (
+				664F41C928596DD900341A84 /* Sources */,
+				664F41CA28596DD900341A84 /* Frameworks */,
+				664F41CB28596DD900341A84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				664F41D428596DD900341A84 /* PBXTargetDependency */,
+			);
+			name = FinanceGoalsUITests;
+			productName = FinanceGoalsUITests;
+			productReference = 664F41CD28596DD900341A84 /* FinanceGoalsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -124,6 +172,10 @@
 				TargetAttributes = {
 					663DE9382856E15B00DED1E8 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					664F41CC28596DD900341A84 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 663DE9382856E15B00DED1E8;
 					};
 				};
 			};
@@ -141,6 +193,7 @@
 			projectRoot = "";
 			targets = (
 				663DE9382856E15B00DED1E8 /* FinanceGoals */,
+				664F41CC28596DD900341A84 /* FinanceGoalsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +205,13 @@
 			files = (
 				663DE9442856E15C00DED1E8 /* Preview Assets.xcassets in Resources */,
 				663DE9412856E15C00DED1E8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		664F41CB28596DD900341A84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +230,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		664F41C928596DD900341A84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				664F41D028596DD900341A84 /* FinanceGoalsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		664F41D428596DD900341A84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 663DE9382856E15B00DED1E8 /* FinanceGoals */;
+			targetProxy = 664F41D328596DD900341A84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		663DE9452856E15C00DED1E8 /* Debug */ = {
@@ -345,6 +421,40 @@
 			};
 			name = Release;
 		};
+		664F41D528596DD900341A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4FA46Q6PPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CooperHopkins.FinanceGoalsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FinanceGoals;
+			};
+			name = Debug;
+		};
+		664F41D628596DD900341A84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4FA46Q6PPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CooperHopkins.FinanceGoalsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FinanceGoals;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -362,6 +472,15 @@
 			buildConfigurations = (
 				663DE9482856E15C00DED1E8 /* Debug */,
 				663DE9492856E15C00DED1E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		664F41D728596DD900341A84 /* Build configuration list for PBXNativeTarget "FinanceGoalsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				664F41D528596DD900341A84 /* Debug */,
+				664F41D628596DD900341A84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

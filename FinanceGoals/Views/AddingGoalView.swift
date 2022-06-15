@@ -21,8 +21,9 @@ struct AddingGoalView: View {
     @State private var selected = imageStruct.init(id: 5, imageName: "", systemName: "")
     //UI
     var body: some View {
-        NavigationView {
                 VStack {
+                    Text("Add A Goal")
+                        .foregroundColor(.black)
                 TextField("Enter the goal name...", text: $description)
                     .padding()
                     .textFieldStyle(.roundedBorder)
@@ -72,8 +73,6 @@ struct AddingGoalView: View {
                 .accessibilityIdentifier("addGoalEnterButton")
             }
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200, alignment: .top)
-            .navigationTitle("Add A Goal")
-        }
     }
 }
 struct AddingGoalView_Previews: PreviewProvider {
