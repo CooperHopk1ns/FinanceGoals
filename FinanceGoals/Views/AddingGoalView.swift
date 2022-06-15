@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AddingGoalView: View {
+    //Variables
     @Environment(\.dismiss) var dismiss
+    //Goal Variables
     @State var number = 0
     @State var image = ""
     @State var description = ""
@@ -17,31 +19,35 @@ struct AddingGoalView: View {
     @State var amountTotalText = ""
     @State var amountTotal = 0
     @State private var selected = imageStruct.init(id: 5, imageName: "", systemName: "")
+    //UI
     var body: some View {
         NavigationView {
                 VStack {
-                TextField("I am saving for...", text: $description)
+                TextField("Enter the goal name...", text: $description)
                     .padding()
                     .textFieldStyle(.roundedBorder)
                     .foregroundColor(.black)
+                    .accessibilityIdentifier("description")
                 TextField("Amount Saved...", text: $amountSavedText)
                         .padding()
                         .keyboardType(.decimalPad)
                         .textFieldStyle(.roundedBorder)
                         .foregroundColor(.black)
+                        .accessibilityIdentifier("amountSaved")
                 TextField("Amount Total...", text: $amountTotalText)
                     .padding()
                     .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
                     .foregroundColor(.black)
+                    .accessibilityIdentifier("amountTotal")
                     HStack {
-                Text("Goal Image: ")
+                Text("Goal Type: ")
                             .foregroundColor(.black)
                         Picker("Image", selection: $selected) {
                             ForEach(images, id: \.self) {image in
                                 HStack {
-                                    Text(image.imageName)
                                     Image(systemName: image.systemName)
+                                    Text(image.imageName)
                                 }
                             }
                         }
@@ -63,13 +69,13 @@ struct AddingGoalView: View {
                 }) {
                     Text("Enter")
                 }
+                .accessibilityIdentifier("addGoalEnterButton")
             }
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200, alignment: .top)
             .navigationTitle("Add A Goal")
         }
     }
 }
-
 struct AddingGoalView_Previews: PreviewProvider {
     static var previews: some View {
         AddingGoalView()

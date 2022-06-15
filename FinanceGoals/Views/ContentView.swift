@@ -8,29 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    //Variables
     @State private var showingAddGoal = false
     @State var goal = goals
+    //UI
     var body: some View {
             VStack {
                 NavigationView {
-                        List((goal), id: \.self) { goal in
-                            NavigationLink {
-                            GoalView(selected: goal.number)
-                            } label: {
-                                Label(goal.description, systemImage: goal.image)
-                                Text("$\(goal.amountSaved)/$\(goal.amountTotal)")
+                            List((goal), id: \.self) { goal in
+                                NavigationLink {
+                                GoalView(selected: goal.number)
+                                } label: {
+                                    Label(goal.description, systemImage: goal.image)
+                                    Text("$\(goal.amountSaved)/$\(goal.amountTotal)")
+                                }
+                                .accessibilityIdentifier("goalViewIndividual")
                             }
+                            .refreshable {
+                                if let goalData = defaults.data(forKey: "goalsKey") {
+                                    let decodedGoalData = try? JSONDecoder().decode([Goal].self, from: goalData)
+                                    goals = decodedGoalData ?? [testGoal]
+                                }
+                                goal = goals
+                                print(goals)
                         }
-                        .refreshable {
-                            if let goalData = defaults.data(forKey: "goalsKey") {
-                                let decodedGoalData = try? JSONDecoder().decode([Goal].self, from: goalData)
-                                goals = decodedGoalData ?? [testGoal]
-                            }
-                            goal = goals
-                            print(goals)
+                        .navigationTitle("Goals")
                     }
-                    .navigationTitle("Goals")
-                }
+                //Button
             Button(action: {
                 showingAddGoal.toggle()
             }) {
@@ -42,6 +46,7 @@ struct ContentView: View {
                     AddingGoalView()
                 }
             }
+            .padding()
         }
     }
 }
