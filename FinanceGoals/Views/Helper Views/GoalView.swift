@@ -23,7 +23,7 @@ var moneyImage = imageStruct.init(id: 3, imageName: "Money", systemName: "bankno
 //Testing Variables
 var testGoal = Goal.init(number: 0, image: "bag.fill", description: "Test Goal", amountSaved: 50, amountTotal: 1000)
 //Array Variables
-var goals: [Goal] = [testGoal]
+var goals: [Goal] = []
 var images: [imageStruct] = [giftImage, shoppingImage, creditImage, moneyImage]
 //Goal View
 struct GoalView: View {
@@ -80,6 +80,18 @@ struct GoalView: View {
                     .padding()
                     }
                     Button(action: {
+                        var counter = -1
+                        for _ in goals {
+                            counter += 1
+                            if goals[selected].number + 1 == goals.count {
+                                
+                            } else {
+                            goals[counter].number -= 1
+                            print(goals[selected])
+                                print(goals)
+                            print("print")
+                            }
+                        }
                         goals.remove(at: selected)
                         if let encoded = try? JSONEncoder().encode(goals) {
                             defaults.set(encoded, forKey: "goalsKey")
